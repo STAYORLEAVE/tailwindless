@@ -1,0 +1,33 @@
+.truncate-line(@line, @fontSize: 1rem, @lineHeight: 1.5, @hover: true, @responsive: true) when (@line > 1) {
+  .defaultProperties(){
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden !important;
+  }
+  
+  .truncate-@{line} {
+    .defaultProperties();
+    -webkit-line-clamp: @line;
+    height: @fontSize * @lineHeight * @line;
+  }
+  
+  #hooks.hover(~'truncate-@{line}', { 
+    .defaultProperties();
+    -webkit-line-clamp: @line;
+    height: @fontSize * @lineHeight * @line;
+  }, @hover);
+  
+  #hooks.responsive(~'truncate-@{line}', { 
+    .defaultProperties();
+    -webkit-line-clamp: @line;
+    height: @fontSize * @lineHeight * @line;
+  }, @responsive);
+}
+
+.text-color(@name, @color, @hover: true) {
+  .text-@{name}{
+    color: @color;
+  }
+
+  #hooks.hover(~'text-@{name}', { color: @color }, @hover);
+}

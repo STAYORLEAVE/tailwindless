@@ -1,0 +1,61 @@
+#hooks {
+  .hover(@selector, @hashesHover, @hover) when (@hover) {
+    .hover:hover .hover\:@{selector},
+    .hover\:@{selector}:hover {
+      each(@hashesHover, .(@value, @property) {
+        @{property}: @value;
+      })
+    }
+  }
+
+  .focus(@selector, @hashesFocus, @focus) when (@focus) {
+    .focus:focus .focus\:@{selector},
+    .focus\:@{selector}:focus {
+      each(@hashesFocus, .(@value, @property) {
+        @{property}: @value;
+      })
+    }
+  }
+
+  .responsive(@selector, @hashesResponsive, @responsive) when (@responsive) {
+    each(#table.responsive(), .(@vResponsive, @kResponsive, @iResponsive) {
+      @media (min-width: @vResponsive) {
+        .@{kResponsive}\:@{selector} {  
+          each(@hashesResponsive, .(@value, @property) {
+            @{property}: @value;
+          })
+        }
+      }
+    })
+  }
+
+  .opacity-color(@selector, @hashesColorOpacity, @opacity, @hover) when (@opacity) {
+    each(#table.opacity(),.(@vOpacity, @kOpacity) {
+      .@{selector}-@{kOpacity} {
+        each(@hashesColorOpacity, .(@value, @property) {
+          @{property}: fade(@value, @vOpacity);
+        })
+      }
+
+      #hooks.hover(~'@{selector}-@{kOpacity}', {
+        each(@hashesColorOpacity, .(@value, @property) {
+          @{property}: fade(@value, @vOpacity);
+        })
+      }, @hover);
+    });
+  }
+
+  .pseudo(@selector, @hashesPseudo, @pseudo) when (@pseudo) {
+    .last\:@{selector}:last-child {
+      each(@hashesPseudo, .(@value, @property) {
+        @{property}: @value;
+      })
+    }
+  
+    .first\:@{selector}:first-child {
+      each(@hashesPseudo, .(@value, @property) {
+        @{property}: @value;
+      })
+    }
+  }
+}

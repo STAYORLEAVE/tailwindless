@@ -1,0 +1,59 @@
+.rounded(@name, @size){
+  .rounded-@{name} {
+    border-radius: @size;
+  }
+
+  each(#table.direction-combination(), .(@vDeirection, @kDerection, @iDerection){
+    .rounded-@{kDerection}-@{name} {
+      
+      each(@vDeirection, {
+        border-@{value}-radius: @size;
+      })
+    }
+  })
+}
+
+.border-width(@name, @width) {
+  .border-@{name} {
+    border-width: @width;
+  }
+
+  each(#table.direction-abbreviation(), .(@vDeirection, @kDerection, @iDerection){
+    .border-@{kDerection}-@{name} {
+      
+      each(@vDeirection, {
+        border-@{value}-width: @width;
+      })
+    }
+  })
+}
+
+.border-color(@name, @color) {
+  .border-@{name} {
+    border-color: @color;
+  }
+
+  each(#table.direction-abbreviation(), .(@vDeirection, @kDerection, @iDerection){
+    .border-@{kDerection}-@{name} {
+      
+      each(@vDeirection, {
+        border-@{value}-color: @color;
+      })
+    }
+  })
+}
+
+.border-style(@name, @style) {
+  .border-@{name} {
+    border-style: @style;
+  }
+
+  each(#table.direction-abbreviation(), .(@vDeirection, @kDerection, @iDerection){
+    .border-@{kDerection}-@{name} {
+      
+      each(@vDeirection, {
+        border-@{value}-style: @style;
+      })
+    }
+  })
+}

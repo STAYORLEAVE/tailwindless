@@ -1,0 +1,9 @@
+.width(@width, @count, @responsive: true) when(@width > 0) {
+  .width(@width - 1, @count);
+
+  .w-@{width}\/@{count}{
+    width: @width/@count * 100%;
+  }
+
+  #hooks.responsive(~'w-@{width}\/@{count}', {width: @width/@count * 100%}, @responsive);
+}

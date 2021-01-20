@@ -1,0 +1,50 @@
+.transform-scale(@name, @value, @hover: true){
+  .scale-x-@{name} {
+    transform: scaleX(@value);
+  }
+
+  .scale-y-@{name} {
+    transform: scaleY(@value);
+  }
+
+  .scale-@{name}{
+    transform: scale(@value);
+  }
+
+  #hooks.hover(~'scale-x-@{name}', { transform: scaleX(@value) }, @hover);
+  #hooks.hover(~'scale-y-@{name}', { transform: scaleY(@value) }, @hover);
+  #hooks.hover(~'scale-@{name}', { transform: scale(@value) }, @hover);
+}
+
+.transform-rotate(@name, @angle, @hover: true){
+  .rotate-@{name} {
+    transform: rotate(@angle);
+  }
+  .-rotate-@{name} {
+    transform: rotate(@angle * -1);
+  }
+  
+  #hooks.hover(~'rotate-@{name}', { transform: rotate(@angle) }, @hover);
+  #hooks.hover(~'-rotate-@{name}', { transform: rotate(@angle * -1) }, @hover);
+}
+
+.transform-translate(@name, @size) {
+  .translate-x-@{name} {
+    transform: translateX(@size);
+  }
+  .translate-y-@{name} {
+    transform: translateY(@size);
+  }
+  .translate-@{name} {
+    transform: translate(@size, @size);
+  }
+  .-translate-x-@{name} {
+    transform: translateX(@size * -1);
+  }
+  .-translate-y-@{name} {
+    transform: translateY(@size * -1);
+  }
+  .-translate-@{name} {
+    transform: translate(@size * -1, @size * -1);
+  }
+}

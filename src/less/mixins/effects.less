@@ -1,0 +1,14 @@
+.opacity(@name, @opacity, @hover: true) {
+  .opacity-@{name} {
+    opacity: @opacity;
+  }
+  
+  #hooks.hover(~'opacity-@{name}', { opacity: @opacity }, @hover);
+}
+
+.opacity-generator(@name, @opacity) when (@name >= 0) and (@opacity >= 0) {
+  .opacity-generator(@name - 10, @opacity - 0.1);
+
+  .opacity(@name, @opacity);
+}
+

@@ -1,0 +1,17 @@
+.duration(@name, @time) {
+  .duration-@{name} {
+    transition-duration: @time;
+  }
+}
+
+.delay(@name, @time) {
+  .duration-@{name} {
+    transition-delay: @time;
+  }
+}
+
+.timing-function(@name, @function){
+  .@{name} {
+    transition-timing-function: @function;
+  }
+}

@@ -1,0 +1,59 @@
+// global color
+@global-color: #000;
+@global-color-darker: lighten(@global-color, 13.5%); // #222
+@global-color-dark: lighten(@global-color, 20%); // #333
+@global-color-base: lighten(@global-color, 33.5%); // #555
+@global-color-light: lighten(@global-color, 46.7%); // #777
+@global-color-lighter: lighten(@global-color, 93.5%); // #eee
+
+// site theme color
+@site-base: #1b72b1;
+@site-second: #1b72b1;
+@site-third: #06668f;
+@site-light: @site-second;
+@site-dark: @site-third;
+
+// Background color
+@bg-base: #ffffff;
+@bg-light: #e2e2e2;
+@bg-lighter: #f5f5f5;
+@bg-dark: #5555;
+@bg-darker: #333;
+
+/* Border */
+@border-color: rgba(25, 25, 25, .32);
+@border-color-dark: rgba(25, 25, 25, .6);
+@border-color-darker: rgba(25, 25, 25, .75);
+
+// STATE Colors
+@color-primary: @site-base;
+@color-primary-bg: lighten(@site-base, 33.5%);
+
+@color-success: #4caf50;
+@color-success-bg: lighten(@color-success, 33.5%);
+
+@color-info: #03a9f4;
+@color-info-bg: lighten(@color-info, 33.5%);
+
+@color-warning: #fbc02d;
+@color-warning-bg: lighten(@color-warning, 33.5%);
+
+@color-error: #f44339;
+@color-error-bg: lighten(@color-error, 33.5%);
+
+// STATE LABEL ALERT
+@state-success: #325e1c;
+@state-success-bg: #f3faef;
+@state-success-border: #c9e1bd #c9e1bd #c9e1bd #325e1c;
+
+@state-info: #31708f;
+@state-info-bg: #d9edf7;
+@state-info-border: #bce8f1 #bce8f1 #bce8f1 #31708f;
+
+@state-warning: #734c00;
+@state-warning-bg: #fdf8ed;
+@state-warning-border: #f4daa6 #f4daa6 #f4daa6 #734c00;
+
+@state-danger: #a51b00;
+@state-danger-bg: #fcf4f2;
+@state-danger-border: #f9c9bf #f9c9bf #f9c9bf #e62600;

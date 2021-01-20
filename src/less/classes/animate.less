@@ -1,0 +1,118 @@
+// default transition
+@transition-timing-function: cubic-bezier(0.4, 0.2, 1);
+.transition-none {
+  transition-property: none;
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: @transition-timing-function;
+  transition-duration: 0.3s;
+}
+.transition {
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: @transition-timing-function;
+  transition-duration: 0.3s;
+}
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: @transition-timing-function;
+  transition-duration: 0.3s;
+}
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: @transition-timing-function;
+  transition-duration: 0.3s;
+}
+.transition-shadow {
+  transition-property: box-shadow;
+  transition-timing-function: @transition-timing-function;
+  transition-duration: 0.3s;
+}
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: @transition-timing-function;
+  transition-duration: 0.3s;
+}
+
+// duration
+.duration(75, 75ms);
+.duration(100, 100ms);
+.duration(150, 150ms);
+.duration(200, 200ms);
+.duration(300, 300ms);
+.duration(500, 500ms);
+.duration(700, 700ms);
+.duration(1000, 1000ms);
+
+// timing function
+.timing-function(ease-linear, linear);
+.timing-function(ease-in, cubic-bezier(0.4, 0, 1, 1));
+.timing-function(ease-out, cubic-bezier(0, 0, 0.2, 1));
+.timing-function(ease-in-out, cubic-bezier(0.4, 0, 0.2, 1));
+
+// delay
+.delay(75, 75ms);
+.delay(100, 100ms);
+.delay(150, 150ms);
+.delay(200, 200ms);
+.delay(300, 300ms);
+.delay(500, 500ms);
+.delay(700, 700ms);
+.delay(1000, 1000ms);
+
+// common animate
+.animate-none {
+  animation: none;
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+  @keyframes spin {
+    form {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  @keyframes ping {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    75%,
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
+.animate-bounce {
+  animation: bounce 1s infinite;
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(-25%);
+      animationtimingfunction: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(0);
+      animationtimingfunction: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+}

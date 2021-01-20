@@ -1,0 +1,25 @@
+{
+  "name": "tailwindless",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/STAYORLEAVE/tailwindless.git",
+  "author": "STAYORLEAVE <282505081@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf -rf dist/",
+    "build": "yarn build-less",
+    "build-less": "gulp build-less",
+    "prewatch": "rimraf -rf dist/",
+    "watch": "yarn watch-less",
+    "watch-less": "gulp watch-less"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^2.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-less": "^4.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {}
+}
